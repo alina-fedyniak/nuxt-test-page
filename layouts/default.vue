@@ -4,6 +4,8 @@
 
 <script>
 
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
 
 export default {
   name: "default"
@@ -11,6 +13,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>
