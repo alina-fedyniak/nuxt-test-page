@@ -7,7 +7,7 @@
     </div>
     <div class="mainPage__container">
       <Header/>
-      <Tabs/>
+      <CartInfo/>
       <Delivery/>
     </div>
   </div>
@@ -16,13 +16,13 @@
 <script>
 import Header from '../components/Header/Header'
 import Delivery from '../components/Delivery'
-import Tabs from '../components/Tabs'
+import CartInfo from '../components/CartInfo'
 
 export default {
   components: {
     Header,
     Delivery,
-    Tabs
+    CartInfo,
   },
   name: 'IndexPage'
 }
