@@ -13,9 +13,8 @@ export default {
 </script>
 
 <style>
-  .logo img {
-    width: 196px;
-    height: 32px;
-    margin-top: 33px;
-  }
+.logo img {
+  width: 196px;
+  height: 32px;
+}
 </style>

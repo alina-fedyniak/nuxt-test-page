@@ -7,7 +7,7 @@
     </div>
     <div class="mainPage__container">
       <Header/>
-      <CartInfo/>
+      <CartContainer/>
       <Delivery/>
     </div>
   </div>
@@ -16,48 +16,71 @@
 <script>
 import Header from '../components/Header/Header'
 import Delivery from '../components/Delivery'
-import CartInfo from '../components/CartInfo'
+import CartContainer from '../components/CartContainer'
 
 export default {
   components: {
     Header,
     Delivery,
-    CartInfo,
+    CartContainer,
   },
   name: 'IndexPage'
 }
 </script>
 
 <style lang="scss">
-  .container-fluid {
-    padding: 0;
-  }
-  .mainPage {
-    height: 1854px;
-    background: linear-gradient(180deg,
+.container-fluid {
+  padding: 0;
+}
+
+.mainPage {
+  height: 1854px;
+  background: linear-gradient(180deg,
     rgba(200, 224, 149, 0.8) -5.17%,
     rgba(221, 238, 239, 0.8) 47.96%,
     rgba(255, 255, 255, 0.8) 100%);
-      &__freeDelivery {
-        height: 44px;
-        background: #99AFFF;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Onest', sans-serif;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 24px;
-        color: #FFFFFF;
-      }
-      &__drugsIcon {
-        margin: 0 14px;
-      }
-      &__container {
-        max-width: 1296px;
-        margin: 0 auto;
-      }
+
+  &__freeDelivery {
+    height: 44px;
+    background: #99AFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Onest', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
   }
 
+  &__drugsIcon {
+    margin: 0 14px;
+  }
+
+  &__container {
+    max-width: 1296px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainPage {
+    &__container {
+      margin: 0 37px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .mainPage {
+    &__container {
+      margin: 0 15px;
+    }
+
+    &__freeDelivery {
+      font-size: 14px;
+    }
+  }
+}
 </style>

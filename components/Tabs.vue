@@ -67,15 +67,16 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-  .tabs {
-    max-width: 634px;
-    margin-bottom: 56px;
-  }
-  .ant-tabs-nav .ant-tabs-tab-active {
-    color: #00284F;
-  }
-  .ant-tabs-ink-bar {
-    background-color: #00284F;
-  }
+.tabs {
+  max-width: 634px;
+  margin-bottom: 56px;
+}
 
+.ant-tabs-nav .ant-tabs-tab-active {
+  color: #00284F;
+}
+
+.ant-tabs-ink-bar {
+  background-color: #00284F;
+}
 </style>

@@ -29,25 +29,32 @@ export default {
 </script>
 
 <style lang="scss">
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 36px;
+
+  &__menuIcon {
+    margin-right: 40px;
+  }
+
+  &__phoneIcon {
+    margin-right: 37px;
+  }
+}
+
+@media (max-width: 576px) {
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 33px;
+    padding-bottom: 57px;
 
     &__menuIcon {
-      margin-right: 40px;
-     }
+      margin-right: 15px;
+    }
+
     &__phoneIcon {
-      margin-right: 37px;
-     }
+      margin-right: 17px;
+    }
   }
-
-  @media (min-width: 768px) {
-
-  }
-
-  @media (min-width: 576px) {
-
-  }
+}
 </style>
