@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs">
+  <div class="productTabs">
     <a-tabs v-model:activeKey="activeKey">
       <a-tab-pane key="1" tab="ОПИС">Комплекс EPA + DHA кислот і натуральних
         вітамінів А & D3 для здоров'я твоєї шкіри, волосся, зору, сну, міцних кісток, суглобів та імунітету.
@@ -55,7 +55,7 @@
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
-  name: 'Tabs',
+  name: 'ProductTabs',
 
   setup() {
     return {
@@ -67,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.tabs {
+.productTabs {
   max-width: 634px;
   margin-bottom: 56px;
 }

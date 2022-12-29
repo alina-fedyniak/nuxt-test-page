@@ -7,22 +7,22 @@
     </div>
     <div class="mainPage__container">
       <Header/>
-      <CartContainer/>
-      <Delivery/>
+      <ProductContainer/>
+      <ProductDelivery/>
     </div>
   </div>
 </template>
 
 <script>
 import Header from '../components/Header/Header'
-import Delivery from '../components/Delivery'
-import CartContainer from '../components/CartContainer'
+import ProductDelivery from '../components/Product/ProductDelivery'
+import ProductContainer from '../components/Product/ProductContainer'
 
 export default {
   components: {
     Header,
-    Delivery,
-    CartContainer,
+    ProductDelivery,
+    ProductContainer,
   },
   name: 'IndexPage'
 }

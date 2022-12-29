@@ -3,19 +3,19 @@
     <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/img/1_cod.png" class="d-block w-100" alt="drug-img">
+          <img src="../../assets/img/1_cod.png" class="d-block w-100" alt="drug-img">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/2_cod.png" class="d-block w-100" alt="drug-img">
+          <img src="../../assets/img/2_cod.png" class="d-block w-100" alt="drug-img">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/3_cod.png" class="d-block w-100" alt="drug-img">
+          <img src="../../assets/img/3_cod.png" class="d-block w-100" alt="drug-img">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/4_cod.png" class="d-block w-100" alt="drug-img">
+          <img src="../../assets/img/4_cod.png" class="d-block w-100" alt="drug-img">
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/5_cod.png" class="d-block w-100" alt="drug-img">
+          <img src="../../assets/img/5_cod.png" class="d-block w-100" alt="drug-img">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
@@ -33,7 +33,7 @@
 <script>
 
 export default {
-  name: 'CartSlider',
+  name: 'ProductSlider',
 }
 
 </script>

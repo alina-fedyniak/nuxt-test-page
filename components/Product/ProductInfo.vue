@@ -1,15 +1,15 @@
 <template>
-  <div class="cartContainer">
-    <div class="cartInfo">
+  <div class="productContainer">
+    <div class="productInfo">
       <div class="title">
-        <img src="../assets/svg/omega-title.svg" alt="omega-title">
+        <img src="../../assets/svg/omega-title.svg" alt="omega-title">
         <div class="title__info">з вітамінами А і D3</div>
       </div>
-      <Tabs/>
+      <ProductTabs/>
       <div class="priceBlock">
         <div class="drugPrice">
           <div class="drugInfo">
-            <img src="../assets/svg/drugs-two.svg" alt="drugs">
+            <img src="../../assets/svg/drugs-two.svg" alt="drugs">
             <div class="drugInfo__text">
               <div>
                 В упаковці:
@@ -25,18 +25,30 @@
             <span class="price__normal">489 ₴</span>
           </div>
         </div>
-        <div class="cardBlock">
+        <div class="productBlock">
           <div class="count">
-            <div class="count__minus">
-              <img src="../assets/svg/minus.svg" alt="minus">
+            <div class="count__minus"
+                 @click="removeProductToCart"
+            >
+              <button>
+                <img src="../../assets/svg/minus.svg" alt="minus">
+              </button>
             </div>
-            <div class="count__numb">1</div>
-            <div class="count__plus">
-              <img src="../assets/svg/plus.svg" alt="plus">
+            <div class="count__numb">{{ productCount }}</div>
+            <div class="count__plus"
+                 @click="addProductToCart"
+            >
+              <button>
+                <img src="../../assets/svg/plus.svg" alt="plus">
+              </button>
             </div>
           </div>
-          <button class="cardBlock__button">До кошика</button>
-          <button class="cardBlock__button cardBlock__buttonWithPrice">До кошика 489 ₴</button>
+          <button class="productBlock__button"
+                  @click="addProductToCart"
+          >До кошика</button>
+          <button class="productBlock__button productBlock__buttonWithPrice"
+                  @click="addProductToCart"
+          >До кошика 489 ₴</button>
         </div>
       </div>
     </div>
@@ -44,19 +56,32 @@
 </template>
 
 <script>
-import Tabs from '../components/Tabs'
+import ProductTabs from './ProductTabs'
+import {mapActions, mapState} from 'vuex';
 
 export default {
-  name: 'CartInfo',
+  name: 'ProductInfo',
   components: {
-    Tabs,
+    ProductTabs,
   },
+  computed: {
+    ...mapState('cart', ['productCount']),
+  },
+  methods: {
+    ...mapActions('cart', ['decreaseProductCount', 'increaseProductCount']),
+    addProductToCart() {
+      this.increaseProductCount(this.productCount)
+    },
+    removeProductToCart() {
+      this.decreaseProductCount(this.productCount)
+    }
+  }
 }
 
 </script>
 
 <style lang="scss">
-.cartContainer {
+.productContainer {
   font-family: 'Onest', sans-serif;
   width: 634px;
 }
@@ -113,15 +138,24 @@ export default {
   }
 
   &__sale {
+    position: relative;
     color: rgba(0, 40, 79, 0.3);
-    text-decoration: line-through;
     font-style: normal;
     font-weight: 900;
     font-size: 28px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-bottom: 2px solid #1D1D1B;
+      transform: skewY(18deg);
+    }
   }
 }
 
-.cardBlock {
+.productBlock {
   margin-bottom: 121px;
   display: flex;
   justify-content: space-between;
@@ -138,11 +172,20 @@ export default {
     font-size: 18px;
     line-height: 27px;
   }
+  &__buttonWithPrice {
+    display: none;
+  }
 }
 
 .count {
   display: flex;
   align-items: center;
+
+  button:not(:disabled) {
+    border: none;
+    background: none;
+    padding: 0;
+  }
 
   &__minus {
     margin: 0 21px;
@@ -207,7 +250,7 @@ export default {
     }
   }
 
-  .cardBlock {
+  .productBlock {
     margin-bottom: 56px;
 
     &__button {
@@ -219,7 +262,7 @@ export default {
     }
   }
 
-  .cartContainer {
+  .productContainer {
     width: 100%;
   }
 
@@ -269,7 +312,7 @@ export default {
     align-items: center;
   }
 
-  .cardBlock {
+  .productBlock {
     margin-bottom: 32px;
 
     &__button {

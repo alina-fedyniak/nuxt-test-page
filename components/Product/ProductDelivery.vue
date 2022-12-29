@@ -1,15 +1,15 @@
 <template>
-  <div class="delivery">
+  <div class="productDelivery">
     <div class="delivery__block delivery__free">
-      <img src="../assets/svg/free-car.svg" alt="free">
+      <img src="../../assets/svg/free-car.svg" alt="free">
       <div>Безкоштовна доставка від 1800 грн</div>
     </div>
     <div class="delivery__block delivery__package">
-      <img src="../assets/svg/package.svg" alt="package">
+      <img src="../../assets/svg/package.svg" alt="package">
       <div>Відправки в день оформлення замовлення до 16:00</div>
     </div>
     <div class="delivery__block delivery__return">
-      <img src="../assets/svg/return-money.svg" alt="return">
+      <img src="../../assets/svg/return-money.svg" alt="return">
       <div>Гарантія повернення грошових коштівн</div>
     </div>
   </div>
@@ -18,13 +18,13 @@
 <script>
 
 export default {
-  name: 'Delivery',
+  name: 'ProductDelivery',
 }
 
 </script>
 
 <style lang="scss">
-.delivery {
+.productDelivery {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +73,7 @@ export default {
 }
 
 @media (max-width: 768px) {
-  .delivery {
+  .productDelivery {
     padding: 38px 56px;
 
     img {
@@ -106,7 +106,7 @@ export default {
 }
 
 @media (max-width: 576px) {
-  .delivery {
+  .productDelivery {
     padding: 38px 33px;
     flex-direction: column;
 
